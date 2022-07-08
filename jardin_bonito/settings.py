@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'jardin.context_processor.total_carrito',
+                # 'jardin.context_processor.total_carrito',
             ],
         },
     },
@@ -82,14 +82,21 @@ WSGI_APPLICATION = 'jardin_bonito.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'prueba_programacion',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3307',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prueba_programacion',
-        'HOST': '127.0.0.1',
-        'PORT': '3307',
-        'USER': 'root',
-        'PASSWORD': '',
+    'default' : {
+        'ENGINE' : 'django.db.backends.sqlite3',
+        'NAME' : BASE_DIR/'db.sqlite3',
     }
 }
 
