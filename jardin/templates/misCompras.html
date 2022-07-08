@@ -1,0 +1,49 @@
+{% extends 'plantilla_menu.html' %}
+{% load static %}
+
+{%block contenido%}
+
+  <!-- TABLA MIS COMPRAS -->
+
+
+  <div id="main-container">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>Maceteros de Sala</td>
+        <td>12 Abril 2022</td>
+        <td>$ 19,990</td>
+      </tr>
+      <tr>
+        <td>Macetero Madera</td>
+        <td>23 Abril 2022</td>
+        <td>$ 19,990</td>
+      </tr>
+      <tr>
+        <td>Girasoles</td>
+        <td>27 Abril 2022</td>
+        <td>$ 19,990</td>
+      </tr>
+      <tr>
+        <td>Arbusto Variedad</td>
+        <td>29 Abril 2022</td>
+        <td>$ 19,990</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="volver">
+
+    <button type="button" class="btn btn-warning"><a href="{% url 'index' %}">VOLVER AL INICIO</a><i
+        class="fa fa-envelope"></i></button>
+  </div>
+
+  {% endblock contenido%}

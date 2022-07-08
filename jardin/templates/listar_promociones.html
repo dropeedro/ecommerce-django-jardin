@@ -1,0 +1,42 @@
+
+{% extends 'plantilla_menu.html' %}
+{% load static %}
+
+{%block contenido%}
+<section>
+    <div class="card" style="width: 800px">
+      <div class="card-body">
+        <h2>Listar Productos</h2>
+        <table class="table table-responsive-sm">
+          <tr>
+            <th>Producto</th>
+            <th>Descuento %</th>
+            <th>Fecha Caducidad</th>
+            <th>Acción</th>
+          </tr>
+          {% for i in promociones %}
+          <tr>
+            <td>{{ i.id_producto}}</td>
+            <td>{{ i.porc_descuento}}%</td>
+            <td>{{ i.fecha_caducidad}}</td>
+            <td>
+              <a href="{% url 'modificar_promocion' i.idPromocion %}" class="btn btn-info btn-sm">Editar</a>
+              
+              <a href="{% url 'eliminar_promocion' i.idPromocion %}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="{% url 'crud_promociones' %}" class="btn btn-primary">Nueva Promoción</a>
+      </div>
+      <br>
+      </div>
+
+    </section>
+
+
+{% endblock contenido %}

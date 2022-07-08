@@ -1,0 +1,32 @@
+
+{% extends 'plantilla_menu.html' %}
+{% load static %}
+
+{%block contenido%}
+
+	<!-- SECCION CATALOGO -->
+
+  <section>
+    <h2>CATALOGO | FLORES</h2>
+    
+    {% for i in productos %}
+    <div class="card" style="width: 18rem;">
+      <div class="img-container">
+        <!-- <span class="promo">15% de descuento</span> -->
+        <img src="/media/{{i.imagen}}" class="card-img-top" alt="..." height="300px">
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{ i.nombreProducto }}</h5>
+          <strong>${{ i.precio }}</strong>
+          <br>
+          <!-- <strong>$2̶2̶.̶9̶9̶0̶</strong> -->
+          <p class="card-text">{{ i.descripcion }}</p>
+          <strong>Stock Disponible: {{ i.stock }}</strong>
+          <a href="{%url 'sumar' i.idProducto %}" class="btn btn-primary">AGREGAR AL CARRITO</a>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+
+{% endblock contenido %}

@@ -1,0 +1,42 @@
+
+{% extends 'plantilla_menu.html' %}
+{% load static %}
+
+{%block contenido%}
+<section>
+    <div class="card" style="width: 800px">
+      <div class="card-body">
+        <h2>Listar Productos</h2>
+        <table class="table table-responsive-sm">
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Descripcion</th>
+            <th>Acción</th>
+          </tr>
+          {% for i in productos %}
+          <tr>
+            <td>{{ i.nombreProducto}}</td>
+            <td>${{ i.precio}}</td>
+            <td>{{ i.stock}}</td>
+            <td>{{ i.descripcion}}</td>
+            <td>
+              <a href="{% url 'modificar_producto' i.idProducto %}" class="btn btn-info btn-sm">Editar</a>
+              
+              <a href="{% url 'eliminar_producto' i.idProducto %}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="{% url 'crud_productos' %}" class="btn btn-primary">Nuevo Producto</a>
+      </div>
+      <br>
+      </div>
+
+    </section>
+
+
+{% endblock contenido %}
