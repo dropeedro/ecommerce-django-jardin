@@ -1,5 +1,6 @@
-# jardin_bonito
-Proyecto programación web - Jardin Bonito
+# E-Commerce Jardín
+Proyecto desarrollado en Django. Principalmente para crear una tienda virtual. 
+Se crearon API's propias para el listado de productos, crear, editar y eliminar (CRUD).
 
 ## Instalación
 
